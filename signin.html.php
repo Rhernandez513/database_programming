@@ -17,15 +17,15 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/puppy_management_system/favicon.ico">
+    <link rel="icon" href="/favicon.ico">
 
     <title>Signin Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/puppy_management_system/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/puppy_management_system/css/signin.css" rel="stylesheet">
+    <link href="/css/signin.css" rel="stylesheet">
   </head>
 
   <body class="text-center">
