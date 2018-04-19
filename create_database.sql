@@ -1,4 +1,4 @@
-CREATE TABLE `Staff Table`(
+CREATE TABLE `StaffTable`(
   `Staff ID` int(10) NOT NULL,
   `Staff Name` varchar(50) NOT NULL,
   `Staff Type` varchar(50) NOT NULL,
@@ -7,7 +7,7 @@ CREATE TABLE `Staff Table`(
   PRIMARY KEY (`Staff ID`)
 );
 
-CREATE TABLE `Employee`(
+CREATE TABLE `EmployeeTable`(
   `Staff ID` int(10) NOT NULL,
   `Date Hired` varchar(50) NOT NULL,
   `Job Title` varchar(50) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE `Employee`(
   FOREIGN KEY (`Staff ID`) REFERENCES `Staff Table`(`Staff ID`)
 );
 
-CREATE TABLE `Volunteer`(
+CREATE TABLE `VolunteerTable`(
   `Staff ID` int(10) NOT NULL,
   `Supervisor ID` int(10) NOT NULL,
   `Organization Name` varchar(50) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE `Volunteer`(
   FOREIGN KEY (`Supervisor ID`) REFERENCES `Staff Table` (`Staff ID`)
 );
 
-CREATE TABLE `Dog Table`(
+CREATE TABLE `DogTable`(
   `Dog ID` int(10) NOT NULL,
   `Dog Name` varchar (50) NOT NULL,
   `Year of Birth` int(4) NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE `Dog Table`(
   PRIMARY KEY (`Dog ID`)
 );
 
-CREATE TABLE `Activity Table` (
+CREATE TABLE `ActivityTable` (
   `Dog ID` varchar(50) NOT NULL,
   `Staff ID` varchar(50) NOT NULL,
   `Activity` varchar(50) NOT NULL,
@@ -48,24 +48,24 @@ CREATE TABLE `Activity Table` (
 ---  FOREIGN KEY (`Staff ID`) REFERENCES `Staff Table` (`Staff ID`)
 );
 
-CREATE TABLE `Adoption Record` (
+CREATE TABLE `AdoptionRecord` (
   `Dog ID` int(10) NOT NULL,
   `Adopter ID` int(10) NOT NULL,
   `Adoption Date` DATE NOT NULL,
-  `Adopter Name` varchar(50) NOT NULL,
   `Return Date` DATE,
   PRIMARY KEY (`Dog ID`, `Adopter ID`)
 ---  FOREIGN KEY (`Dog ID`) REFERENCES `Dog Table` (`Dog ID`),
 ---  FOREIGN KEY (`Adopter ID`) REFERENCES `Adopter Table` (`Adopter ID`)
 );
 
-CREATE TABLE `Adopter Table` (
+CREATE TABLE `AdopterTable` (
   `Adopter ID` int(10) NOT NULL,
   `Address` varchar(50) NOT NULL,
-  `Phone Number` int(10) NOT NULL
+  `Phone Number` int(10) NOT NULL,
+  `Adopter Name` varchar(50) NOT NULL
 );
 
-CREATE TABLE `Treatment Table`(
+CREATE TABLE `TreatmentRecord`(
   `Physiocian ID` int(10) NOT NULL,
   `Dog ID` int(10) NOT NULL,
   `Treatment Type` varchar(50) NOT NULL,
@@ -73,7 +73,7 @@ CREATE TABLE `Treatment Table`(
   `Treatment Description` varchar(50) NOT NULL
 );
 
-CREATE TABLE `Medication Table` (
+CREATE TABLE `MedicationRecord` (
   `Physician ID` int(10) NOT NULL,
   `Dog ID` int(10) NOT NULL,
   `Medication Name` varchar(50) NOT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE `Medication Table` (
   `End Date` DATE
 );
 
-CREATE TABLE `Physician Table` (
+CREATE TABLE `PhysicianTable` (
   `Physician ID` int(10) NOT NULL,
   `Clinic ID` int(10) NOT NULL,
   `Physician Name` varchar(50) NOT NULL,
