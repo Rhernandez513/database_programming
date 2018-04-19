@@ -87,9 +87,3 @@ CREATE TABLE `Physician Table` (
   `Physician Name` varchar(50) NOT NULL,
   `Physician Type` varchar(50) NOT NULL
 );
-
-CREATE TABLE `Clinic Table` (
-  `Clinic ID` int(10) NOT NULL,
-  `Clinic Address` int(10) NOT NULL,
-  `Clinic Phone Number` int(10) NOT NULL
-);
