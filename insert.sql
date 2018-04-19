@@ -39,3 +39,59 @@ VALUES ('118','Bubba','2016','https://imgur.com/a/4GO4d5A','M','18','French Bull
 
 INSERT INTO `Dog Table`(`Dog ID`, `Dog Name`, `Year of Birth`, `Photo`, `Sex`, `Cage Number`, `Breed`, `Adoption Status`, `Weight`)
 VALUES ('119','Max','2018','https://imgur.com/Bcs2AYD','M','11','Labrador','No','10');
+
+/*STAFF TABLE*/
+INSERT INTO `Staff Table` (`Staff ID`, `Staff Name`, `Staff Type`, `Address`, `Phone Number`)
+VALUES ('60', 'Christina', 'Employee', '123 Street St', '888888888');
+
+INSERT INTO `Staff Table` (`Staff ID`, `Staff Name`, `Staff Type`, `Address`, `Phone Number`)
+VALUES ('61', 'Grace', 'Employee', '456 Street St', '6666666666');
+
+INSERT INTO `Staff Table` (`Staff ID`, `Staff Name`, `Staff Type`, `Address`, `Phone Number`)
+VALUES ('62', 'Robert', 'Employee', '789 Street St', '4444444444');
+
+INSERT INTO `Staff Table` (`Staff ID`, `Staff Name`, `Staff Type`, `Address`, `Phone Number`)
+VALUES ('63', 'Walker', 'Employee', '100 Street St', '7777777777');
+
+INSERT INTO `Staff Table` (`Staff ID`, `Staff Name`, `Staff Type`, `Address`, `Phone Number`)
+VALUES ('64', 'Jorge', 'Volunteer', '200 Street St', '9999999999');
+
+INSERT INTO `Staff Table` (`Staff ID`, `Staff Name`, `Staff Type`, `Address`, `Phone Number`)
+VALUES ('65', 'Angela', 'Volunteer', '123 Street St', '2222222222');
+
+INSERT INTO `Staff Table` (`Staff ID`, `Staff Name`, `Staff Type`, `Address`, `Phone Number`)
+VALUES ('66', 'Jake', 'Volunteer', '300 Street St', '33333333333');
+
+/*ADOPTER TABLE*/
+INSERT INTO `Adopter Table`(`Adopter ID`, `Address`, `Phone Number`, `Name`)
+VALUES ('10', '60 Street St','1111111111','Jane Doe');
+
+INSERT INTO `Adopter Table`(`Adopter ID`, `Address`, `Phone Number`, `Name`)
+VALUES ('11', '600 Street St','5555555555','Trent Smith');
+
+/*PHYSICIAN TABLE*/
+INSERT INTO `Physician Table`(`Physician ID`, `Physician Name`, `Physician Type`)
+VALUES ('20','John Lu', 'Surgeon');
+
+INSERT INTO `Physician Table`(`Physician ID`, `Physician Name`, `Physician Type`)
+VALUES ('21','Ella Klien', 'General');
+
+INSERT INTO `Physician Table`(`Physician ID`, `Physician Name`, `Physician Type`)
+VALUES ('22', 'Rosa Flores', 'Dentist');
+
+/*VOLUNTEER TABLE*/
+INSERT INTO `Volunteer`(`Staff ID`, `Supervisor ID`, `Organization Name`, `Job Assignment`)
+VALUES ('64','62','Loyola University','Walk');
+
+INSERT INTO `Volunteer`(`Staff ID`, `Supervisor ID`, `Organization Name`, `Job Assignment`)
+VALUES ('65','62','WLPO','Walk');
+
+INSERT INTO `Volunteer`(`Staff ID`, `Supervisor ID`, `Organization Name`, `Job Assignment`)
+VALUES ('66','62','Metropolis Church','Clean');
+
+INSERT INTO `Adoption Record`(`Dog ID`, `Adopter ID`, `Adoption Date`)
+VALUES ('111','10','2015-04-15');
+
+INSERT INTO `Adoption Record`(`Dog ID`, `Adopter ID`, `Adoption Date`)
+VALUES ('112','11','2013-07-11');
+
