@@ -1,5 +1,5 @@
 
-/*Employee Table*/
+/*EMPLOYEE*/
 INSERT INTO `Employee`(`Staff ID`, `Date Hired`, `Job Title`)
 VALUES ('60','6/11/2011','Groomer');
 
@@ -12,7 +12,7 @@ VALUES ('62','8/14/2008','Supervisor');
 INSERT INTO `Employee`(`Staff ID`, `Date Hired`, `Job Title`)
 VALUES ('63','5/03/2008','Maintenance');
 
-/*Dog Table*/
+/*DOG TABLE*/
 INSERT INTO `Dog Table`(`Dog ID`, `Dog Name`, `Year of Birth`, `Photo`, `Sex`, `Cage Number`, `Breed`, `Adoption Status`, `Weight`)
 VALUES ('111','Violet','2013','	https://imgur.com/a/INSQ7MJ','F','24','Shiba Inu','Yes','20');
 
