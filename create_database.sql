@@ -52,6 +52,7 @@ CREATE TABLE `Adoption Record` (
   `Dog ID` int(10) NOT NULL,
   `Adopter ID` int(10) NOT NULL,
   `Adoption Date` DATE NOT NULL,
+  `Adopter Name` varchar(50) NOT NULL,
   `Return Date` DATE,
   PRIMARY KEY (`Dog ID`, `Adopter ID`)
 ---  FOREIGN KEY (`Dog ID`) REFERENCES `Dog Table` (`Dog ID`),
