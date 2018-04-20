@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 20, 2018 at 12:56 AM
+-- Generation Time: Apr 20, 2018 at 01:09 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ActivityTable`
+-- Table structure for table `ActivityRecord`
 --
 
-CREATE TABLE `ActivityTable` (
+CREATE TABLE `ActivityRecord` (
   `Dog ID` varchar(50) NOT NULL,
   `Staff ID` varchar(50) NOT NULL,
   `Activity` varchar(50) NOT NULL,
@@ -213,22 +213,10 @@ INSERT INTO `VolunteerTable` (`Staff ID`, `Supervisor ID`, `Organization Name`, 
 --
 
 --
--- Indexes for table `ActivityTable`
---
-ALTER TABLE `ActivityTable`
-  ADD PRIMARY KEY (`Dog ID`,`Staff ID`);
-
---
 -- Indexes for table `AdopterTable`
 --
 ALTER TABLE `AdopterTable`
   ADD PRIMARY KEY (`Adopter ID`);
-
---
--- Indexes for table `AdoptionRecord`
---
-ALTER TABLE `AdoptionRecord`
-  ADD PRIMARY KEY (`Dog ID`,`Adopter ID`);
 
 --
 -- Indexes for table `DogTable`
@@ -243,12 +231,6 @@ ALTER TABLE `EmployeeTable`
   ADD PRIMARY KEY (`Staff ID`);
 
 --
--- Indexes for table `MedicationRecord`
---
-ALTER TABLE `MedicationRecord`
-  ADD PRIMARY KEY (`Physician ID`,`Dog ID`);
-
---
 -- Indexes for table `PhysicianTable`
 --
 ALTER TABLE `PhysicianTable`
@@ -259,12 +241,6 @@ ALTER TABLE `PhysicianTable`
 --
 ALTER TABLE `StaffTable`
   ADD PRIMARY KEY (`Staff ID`);
-
---
--- Indexes for table `TreatmentRecord`
---
-ALTER TABLE `TreatmentRecord`
-  ADD PRIMARY KEY (`Physician ID`,`Dog ID`);
 
 --
 -- Indexes for table `VolunteerTable`
