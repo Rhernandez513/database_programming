@@ -1,3 +1,18 @@
+<?php
+//if(!isset($_COOKIE['UserIDAuth'])) {
+//    header('Location: /signin.html.php');
+//}
+
+include 'includes/db.inc.php';
+
+$query = "SELECT `Dog ID` FROM `dogtable`";
+$result = $pdo->query($query);
+
+$row = $result->fetch();
+//echo $row[0];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,12 +65,19 @@
 
     <!-- Page Content -->
     <div class="container">
-
+        <br>
       <!-- Introduction Row -->
       <h1 class="my-4">Managerial Dashboard
 	  <br>
       </h1>
-
+        <?php echo $row[0]; ?>
+        <select>
+            <?php
+                foreach($row as $value) {
+                    echo "<option value=" . $value . ">" . $value . "</option>";
+                }
+            ?>
+        </select>
       <p>Dog ID:</p>
       <br>
       
@@ -89,7 +111,7 @@
           <p>Description here</p>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img src="/img/volunteers.png">
+          <a href="/volunteerView.html"><img src="/img/volunteers.png"></a>
           <h3>Volunteers
 		  <br>
             <small>Click here to view Volunteers</small>
