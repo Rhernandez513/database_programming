@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 20, 2018 at 01:09 AM
+-- Generation Time: Apr 20, 2018 at 01:24 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -79,13 +79,28 @@ CREATE TABLE `DogTable` (
   `Dog ID` int(10) NOT NULL,
   `Dog Name` varchar(50) NOT NULL,
   `Year of Birth` int(4) NOT NULL,
-  `Photo` varchar(50) NOT NULL,
+  `Photo` varchar(500) NOT NULL,
   `Sex` varchar(1) NOT NULL,
   `Cage Number` int(2) NOT NULL,
   `Breed` varchar(50) NOT NULL,
   `Adoption Status (Y/N)` char(1) NOT NULL,
   `Weight (lbs)` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `DogTable`
+--
+
+INSERT INTO `DogTable` (`Dog ID`, `Dog Name`, `Year of Birth`, `Photo`, `Sex`, `Cage Number`, `Breed`, `Adoption Status (Y/N)`, `Weight (lbs)`) VALUES
+(111, 'Violet', 2013, '	https://imgur.com/a/INSQ7MJ', 'F', 24, 'Shiba Inu', 'Y', 20),
+(112, 'Lily', 2008, 'https://imgur.com/a/9cVgBqj', 'F', 13, 'Pitbull Mix', 'Y', 30),
+(113, 'Mya', 2009, 'https://imgur.com/a/wCiDPv6', 'F', 3, 'Pug', 'N', 12),
+(114, 'Honey', 2016, 'https://imgur.com/a/wCiDPv6', 'F', 5, 'Siberian Husky', 'N', 65),
+(115, 'Peter', 2017, 'https://imgur.com/a/i2HdAKQ', 'M', 10, 'Cavachon', 'N', 10),
+(116, 'Edie', 2018, 'https://imgur.com/a/ZQuDhtW', 'F', 20, 'Pitbull Mix', 'N', 25),
+(117, 'Tank', 2018, 'https://imgur.com/a/QECk0VK', 'M', 14, 'Rotweiler', 'N', 13),
+(118, 'Bubba', 2016, 'https://imgur.com/a/4GO4d5A', 'M', 18, 'French Bulldog', 'N', 25),
+(119, 'Max', 2018, 'https://imgur.com/Bcs2AYD', 'M', 11, 'Labrador', 'N', 10);
 
 -- --------------------------------------------------------
 
