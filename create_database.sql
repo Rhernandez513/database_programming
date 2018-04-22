@@ -150,8 +150,8 @@ CREATE TABLE `Activity Table` (
   `Activity` varchar(50) NOT NULL,
   `Date` DATE NOT NULL,
   PRIMARY KEY (`Dog ID`, `Staff ID`)
----  FOREIGN KEY (`Dog ID`) REFERENCES `Dog Table` (`Dog ID`),
----  FOREIGN KEY (`Staff ID`) REFERENCES `Staff Table` (`Staff ID`)
+/*  FOREIGN KEY (`Dog ID`) REFERENCES `Dog Table` (`Dog ID`),
+    FOREIGN KEY (`Staff ID`) REFERENCES `Staff Table` (`Staff ID`) */
 );
 
 CREATE TABLE `Adoption Record` (
@@ -161,8 +161,8 @@ CREATE TABLE `Adoption Record` (
   `Adopter Name` varchar(50) NOT NULL,
   `Return Date` DATE,
   PRIMARY KEY (`Dog ID`, `Adopter ID`)
----  FOREIGN KEY (`Dog ID`) REFERENCES `Dog Table` (`Dog ID`),
----  FOREIGN KEY (`Adopter ID`) REFERENCES `Adopter Table` (`Adopter ID`)
+/*  FOREIGN KEY (`Dog ID`) REFERENCES `Dog Table` (`Dog ID`),
+    FOREIGN KEY (`Adopter ID`) REFERENCES `Adopter Table` (`Adopter ID`) */
 );
 
 CREATE TABLE `Adopter Table` (
