@@ -117,8 +117,8 @@ CREATE TABLE `Employee`(
   `Staff ID` int(10) NOT NULL,
   `Date Hired` varchar(50) NOT NULL,
   `Job Title` varchar(50) NOT NULL,
-  PRIMARY KEY (`Staff ID`),
-  FOREIGN KEY (`Staff ID`) REFERENCES `Staff Table`(`Staff ID`)
+  PRIMARY KEY (`Staff ID`)
+  /* FOREIGN KEY (`Staff ID`) REFERENCES `Staff Table`(`Staff ID`) */
 );
 
 CREATE TABLE `Volunteer`(
@@ -126,9 +126,9 @@ CREATE TABLE `Volunteer`(
   `Supervisor ID` int(10) NOT NULL,
   `Organization Name` varchar(50) NOT NULL,
   `Job Assignment` varchar(50) NOT NULL,
-  PRIMARY KEY (`Staff ID`),
-  FOREIGN KEY (`Staff ID`) REFERENCES `Staff Table` (`Staff ID`),
-  FOREIGN KEY (`Supervisor ID`) REFERENCES `Staff Table` (`Staff ID`)
+  PRIMARY KEY (`Staff ID`)
+ /* FOREIGN KEY (`Staff ID`) REFERENCES `Staff Table` (`Staff ID`),
+  FOREIGN KEY (`Supervisor ID`) REFERENCES `Staff Table` (`Staff ID`) */
 );
 
 CREATE TABLE `Dog Table`(
