@@ -1,18 +1,8 @@
 <?php
-//if(!isset($_COOKIE['UserIDAuth'])) {
-//    header('Location: /signin.html.php');
-//}
+include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
+global $pdo;
 
-//include 'includes/db.inc.php';
-
-//$query = "SELECT `Dog ID` FROM `dogtable`";
-//$result = $pdo->query($query);
-
-//$row = $result->fetch();
-//echo $row[0];
-$pdo = new PDO('mysql:host=localhost;dbname=ShelterDB', 'root', 'root');
-
-$query = "SELECT * FROM DogTable";
+$query = "SELECT * FROM dogtable";
 $result = $pdo->query($query);
 $row = $result->fetchAll();
 
