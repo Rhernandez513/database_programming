@@ -108,7 +108,7 @@ $row = $result->fetchAll();
           <p>Description here</p>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <a href="/volunteerView.html"><img src="/img/volunteers.png"></a>
+          <a href="/volunteerView.html.php"><img src="/img/volunteers.png"></a>
           <h3>Volunteers
 		  <br>
             <small>Click here to view Volunteers</small>
