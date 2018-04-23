@@ -77,13 +77,15 @@
 </head>
 <body>
 
-<form action="enter_new_activity_record.html.php" method="post">
+<form action="activity_record.html.php" method="post">
 <h2>Volunteers</h2>
-    <input type="radio" name="volunteerSelect" id="volunteerOption1">
+
+    <input type="radio" name="volunteerSelect" id="volunteerOption1" value="View_Activity">
     <label for="volunteerOption1">View Activity Log</label>
-    <input type="radio" name="volunteerSelect" id="volunteerOption2">
+
+    <input type="radio" name="volunteerSelect" id="volunteerOption2" value="Enter_New">
     <label for="volunteerOption2">Enter New Activity Record</label>
-    <!--<button type="button" class="btn" name="first_button">Submit</button>-->
+
     <input type="submit" value="Submit">
 </form>
 </body>
