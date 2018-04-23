@@ -1,14 +1,6 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
 
-    global $pdo;
-    try {
-    $result = $pdo->query('SELECT COUNT(*) FROM employee');
-    } catch (PDOException $e) {
-        $error = 'Database error counting employees!';
-        include 'error.html.php';
-        exit();
-    }
 ?>
 <!doctype html>
 <html lang="en">
