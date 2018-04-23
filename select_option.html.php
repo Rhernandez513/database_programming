@@ -2,7 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
 global $pdo;
 
-$query = "SELECT * FROM dogtable";
+$query = "SELECT * FROM DogTable";
 $result = $pdo->query($query);
 $row = $result->fetchAll();
 
