@@ -14,7 +14,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=ShelterDB', 'root', 'root');
 
 $query = "SELECT * FROM DogTable";
 $result = $pdo->query($query);
-$row = $result->fetch();
+$row = $result->fetchAll();
 
 ?>
 
@@ -80,7 +80,7 @@ $row = $result->fetch();
         <select>
           <?php
                 foreach($row as $value) {
-                    echo "<option value=" . $value . ">" . $value  . "</option>";
+                    echo "<option value=" . $value['Dog ID'] . ">" . $value['Dog ID']  . "</option>";
                 }
             ?>
         </select>
