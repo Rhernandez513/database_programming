@@ -3,13 +3,18 @@
 //    header('Location: /signin.html.php');
 //}
 
-include 'includes/db.inc.php';
+//include 'includes/db.inc.php';
 
-$query = "SELECT `Dog ID` FROM `dogtable`";
-$result = $pdo->query($query);
+//$query = "SELECT `Dog ID` FROM `dogtable`";
+//$result = $pdo->query($query);
 
-$row = $result->fetch();
+//$row = $result->fetch();
 //echo $row[0];
+$pdo = new PDO('mysql:host=localhost;dbname=ShelterDB', 'root', 'root');
+
+$query = "SELECT * FROM DogTable";
+$result = $pdo->query($query);
+$row = $result->fetch();
 
 ?>
 
@@ -67,18 +72,19 @@ $row = $result->fetch();
     <div class="container">
         <br>
       <!-- Introduction Row -->
-      <h1 class="my-4">Managerial Dashboard
+      <h1 class="my-4">Employee Dashboard
 	  <br>
       </h1>
-        <?php echo $row[0]; ?>
+          <p>Dog ID:</p>
+	      <br>
         <select>
-            <?php
+          <?php
                 foreach($row as $value) {
-                    echo "<option value=" . $value . ">" . $value . "</option>";
+                    echo "<option value=" . $value . ">" . $value  . "</option>";
                 }
             ?>
         </select>
-      <p>Dog ID:</p>
+    
       <br>
       
       <!-- Team Members Row -->
