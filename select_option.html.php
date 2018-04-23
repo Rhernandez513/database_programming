@@ -29,7 +29,6 @@ $row = $result->fetchAll();
   </head>
 
   <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
@@ -64,6 +63,8 @@ $row = $result->fetchAll();
       <!-- Introduction Row -->
       <h1 class="my-4">Employee Dashboard
 	  <br>
+          <h2>You have logged in<h2>
+
       </h1>
           <p>Dog ID:</p>
 	      <br>
