@@ -160,5 +160,4 @@ $row = $result->fetchAll();
     </script>
 
   </body>
-
-</html>
+ </html>
