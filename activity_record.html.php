@@ -89,7 +89,7 @@ if(isset($_POST['volunteerSelect'])) {
 }
 if($radio_value == "Enter_New") {
     echo "
-    <form action=\"function_new_activity.php\" method=\"post\" class=\"form-signin\">
+    <form action=\"function_new_activity.html.php\" method=\"post\" class=\"form-signin\">
     <h1 class=\"h3 mb-3 font-weight-normal\">Enter New Activity Record</h1>
     <label for=\"dog_id\" class=\"sr-only\">Dog ID: </label>
     <input type=\"text\" id=\"dog_id\" name=\"dog_id\" class=\"form-control\" placeholder=\"Dog ID\" required autofocus>
@@ -133,13 +133,6 @@ if($radio_value == "Enter_New") {
 } else {
     echo "No radio button set";
 }
-?>
-
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-
 ?>
 
 <script src="vendor/jquery/jquery.min.js"></script>
