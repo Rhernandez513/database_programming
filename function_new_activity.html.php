@@ -24,21 +24,7 @@ echo $result;
 
 function New_Activity($dog_id, $staff_id, $activity, $date) {
     global $pdo;
-//    $query = "INSERT INTO `ActivityRecord` (`Dog ID`, `Staff ID`, `Activity`, `Date`) VALUES ($dog_id, $staff_id, $activity, '$date');";
 
- /*   $sql = 'INSERT INTO `ActivityRecord` SET 
-            dog id = :dog_id,
-            staff id = :staff_id,
-            activity = :activity
-            date = :date';
-    $s = $pdo->prepare($sql);
-    $s->bindValue(':dog_id', $_POST['dog_id']);
-    $s->bindValue(':staff_id', $_POST['staff_id']);
-    $s->bindValue(':activity', $_POST['activity']);
-    $s->bindValue(':date', $_POST['date']);
-    $s->execute();
-    */
-    
     // prepare sql and bind parameters
     $stmt = $pdo->prepare("INSERT INTO ActivityRecord (`Dog ID`, `Staff ID`, `Activity`, `Date`)
     VALUES (:dogid, :staffid, :activity, :date)");
