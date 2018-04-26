@@ -114,7 +114,7 @@ catch(PDOException $e)
     echo 'The activity has not been entered.';
 }
 }
-include 'entered_records.php';
+include 'entered_records.html.php';
 ?>
 </head>
 </html>
