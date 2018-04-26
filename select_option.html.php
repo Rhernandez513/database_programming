@@ -68,16 +68,17 @@ $row = $result->fetchAll();
       </h1>
           <p>Dog ID:</p>
 	      <br>
-        <select>
+        <select id="dog-id-select">
+          <option disabled selected>Please choose a dog...</option>
           <?php
                 foreach($row as $value) {
                     echo "<option value=" . $value['Dog ID'] . ">" . $value['Dog ID']  . "</option>";
                 }
             ?>
         </select>
-    
+
       <br>
-      
+
       <!-- Team Members Row -->
       <div class="row">
         <div class="col-lg-12">
@@ -146,6 +147,17 @@ $row = $result->fetchAll();
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    jQuery(document).ready(function($){
+      $("#dog-id-select").change(function(e){
+        var dogID = $("#dog-id-select").val();
+        $.post("session_updater.php", {
+          "dog_id" : dogID
+        });
+      });
+    });
+    </script>
 
   </body>
 
