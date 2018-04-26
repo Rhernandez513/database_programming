@@ -40,7 +40,7 @@ function New_Activity($dog_id, $staff_id, $activity, $date) {
     */
     
     // prepare sql and bind parameters
-    $stmt = $pdo->prepare("INSERT INTO ActivityRecord (Dog ID, Staff ID, Activity, Date)
+    $stmt = $pdo->prepare("INSERT INTO ActivityRecord (`Dog ID`, `Staff ID`, `Activity`, `Date`)
     VALUES (:dogid, :staffid, :activity, :date)");
     $stmt->bindParam(':dogid', $dog_id);
     $stmt->bindParam(':staffid', $staff_id);
