@@ -19,7 +19,7 @@ $row = $result->fetchAll();
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
 
-    <title>Album example for Bootstrap</title>
+    <title>Puppy Management System 3000</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.css" rel="stylesheet">
