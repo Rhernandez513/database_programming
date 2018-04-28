@@ -100,7 +100,7 @@ INSERT INTO `DogTable` (`Dog ID`, `Dog Name`, `Year of Birth`, `Photo`, `Sex`, `
 (116, 'Edie', 2018, 'https://imgur.com/a/ZQuDhtW', 'F', 20, 'Pitbull Mix', 'N', 25),
 (117, 'Tank', 2018, 'https://imgur.com/a/QECk0VK', 'M', 14, 'Rotweiler', 'N', 13),
 (118, 'Bubba', 2016, 'https://imgur.com/a/4GO4d5A', 'M', 18, 'French Bulldog', 'N', 25),
-(119, 'Max', 2018, 'https://imgur.com/Bcs2AYD', 'M', 11, 'Labrador', 'N', 10);
+(119, 'Drexel', 2017, 'TBD', 'M', 15, 'Putbull Mix', 'N', 10);
 
 -- --------------------------------------------------------
 
