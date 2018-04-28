@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 26, 2018 at 09:48 PM
+-- Generation Time: Apr 28, 2018 at 07:38 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -228,12 +228,6 @@ INSERT INTO `VolunteerTable` (`Staff ID`, `Supervisor ID`, `Organization Name`, 
 --
 
 --
--- Indexes for table `ActivityRecord`
---
-ALTER TABLE `ActivityRecord`
-  ADD PRIMARY KEY (`Dog ID`,`Staff ID`);
-
---
 -- Indexes for table `AdopterTable`
 --
 ALTER TABLE `AdopterTable`
@@ -243,7 +237,8 @@ ALTER TABLE `AdopterTable`
 -- Indexes for table `AdoptionRecord`
 --
 ALTER TABLE `AdoptionRecord`
-  ADD PRIMARY KEY (`Dog ID`,`Adopter ID`);
+  ADD KEY `Adopter ID` (`Adopter ID`),
+  ADD KEY `Dog ID` (`Dog ID`);
 
 --
 -- Indexes for table `DogTable`
@@ -261,7 +256,8 @@ ALTER TABLE `EmployeeTable`
 -- Indexes for table `MedicationRecord`
 --
 ALTER TABLE `MedicationRecord`
-  ADD PRIMARY KEY (`Physician ID`,`Dog ID`);
+  ADD KEY `Dog ID` (`Dog ID`),
+  ADD KEY `Physician ID` (`Physician ID`);
 
 --
 -- Indexes for table `PhysicianTable`
@@ -279,13 +275,14 @@ ALTER TABLE `StaffTable`
 -- Indexes for table `TreatmentRecord`
 --
 ALTER TABLE `TreatmentRecord`
-  ADD PRIMARY KEY (`Physician ID`,`Dog ID`);
+  ADD KEY `Dog ID` (`Dog ID`),
+  ADD KEY `Physician ID` (`Physician ID`);
 
 --
 -- Indexes for table `VolunteerTable`
 --
 ALTER TABLE `VolunteerTable`
-  ADD PRIMARY KEY (`Staff ID`),
+  ADD KEY `Staff ID` (`Staff ID`),
   ADD KEY `Supervisor ID` (`Supervisor ID`);
 
 --
@@ -293,14 +290,29 @@ ALTER TABLE `VolunteerTable`
 --
 
 --
--- Constraints for table `EmployeeTable`
+-- Constraints for table `AdoptionRecord`
 --
-ALTER TABLE `EmployeeTable`
-  ADD CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`Staff ID`) REFERENCES `StaffTable` (`Staff ID`);
+ALTER TABLE `AdoptionRecord`
+  ADD CONSTRAINT `adoptionrecord_ibfk_1` FOREIGN KEY (`Adopter ID`) REFERENCES `AdopterTable` (`Adopter ID`),
+  ADD CONSTRAINT `adoptionrecord_ibfk_2` FOREIGN KEY (`Dog ID`) REFERENCES `DogTable` (`Dog ID`);
+
+--
+-- Constraints for table `MedicationRecord`
+--
+ALTER TABLE `MedicationRecord`
+  ADD CONSTRAINT `medicationrecord_ibfk_1` FOREIGN KEY (`Dog ID`) REFERENCES `DogTable` (`Dog ID`),
+  ADD CONSTRAINT `medicationrecord_ibfk_2` FOREIGN KEY (`Physician ID`) REFERENCES `PhysicianTable` (`Physician ID`);
+
+--
+-- Constraints for table `TreatmentRecord`
+--
+ALTER TABLE `TreatmentRecord`
+  ADD CONSTRAINT `treatmentrecord_ibfk_1` FOREIGN KEY (`Dog ID`) REFERENCES `DogTable` (`Dog ID`),
+  ADD CONSTRAINT `treatmentrecord_ibfk_2` FOREIGN KEY (`Physician ID`) REFERENCES `PhysicianTable` (`Physician ID`);
 
 --
 -- Constraints for table `VolunteerTable`
 --
 ALTER TABLE `VolunteerTable`
-  ADD CONSTRAINT `volunteer_ibfk_1` FOREIGN KEY (`Staff ID`) REFERENCES `StaffTable` (`Staff ID`),
-  ADD CONSTRAINT `volunteer_ibfk_2` FOREIGN KEY (`Supervisor ID`) REFERENCES `StaffTable` (`Staff ID`);
+  ADD CONSTRAINT `volunteertable_ibfk_1` FOREIGN KEY (`Staff ID`) REFERENCES `StaffTable` (`Staff ID`),
+  ADD CONSTRAINT `volunteertable_ibfk_2` FOREIGN KEY (`Supervisor ID`) REFERENCES `StaffTable` (`Staff ID`);
