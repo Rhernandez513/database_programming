@@ -16,7 +16,7 @@ INSERT INTO `DogTable` (`Dog ID`, `Dog Name`, `Year of Birth`, `Photo`, `Sex`, `
 (116, 'Edie', 2018, 'https://i.imgur.com/guT3DAu.jpg', 'F', 20, 'Pitbull Mix', 'N', 25),
 (117, 'Tank', 2018, 'https://i.imgur.com/0XxzWaK.jpg', 'M', 14, 'Rotweiler', 'N', 13),
 (118, 'Bubba', 2016, 'https://i.imgur.com/J92iobc.jpg', 'M', 18, 'French Bulldog', 'N', 25),
-(119, 'Drexel', 2017, 'https://i.imgur.com/Bcs2AYD.jpg', 'M', 15, 'Mix', 'Y', 11);
+(119, 'Drexel', 2017, '_____', 'M', 15, 'Mix', 'Y', 11);
 
 INSERT INTO `EmployeeTable` (`Staff ID`, `Date Hired`, `Job Title`) VALUES
 (60, '6/11/2011', 'Groomer'),
