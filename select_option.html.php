@@ -85,10 +85,10 @@ $row = $result->fetchAll();
           <h2 class="my-4">Options</h2>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img src="/img/syringe.jpg">
-          <h3>Vaccinations
+            <a href="records.html.php"><img src="/img/syringe.jpg"></a>
+          <h3>Records
             <br>
-            <small>Click here to view vaccinations</small>
+            <small>View Medical Records</small>
           </h3>
           <p>Description here</p>
         </div>
