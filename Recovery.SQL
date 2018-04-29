@@ -119,10 +119,10 @@ CREATE TABLE `EmployeeTable` (
 --
 
 INSERT INTO `EmployeeTable` (`Staff ID`, `Date Hired`, `Job Title`) VALUES
-(60, '6/11/2011', 'Groomer'),
-(61, '4/20/2010', 'Reception'),
-(62, '8/14/2008', 'Supervisor'),
-(63, '5/03/2008', 'Maintenance');
+(60, '20110611', 'Groomer'),
+(61, '20100404', 'Reception'),
+(62, '20080811', 'Supervisor'),
+(63, '20080503', 'Maintenance');
 
 -- --------------------------------------------------------
 
