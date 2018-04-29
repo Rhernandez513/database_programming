@@ -92,7 +92,7 @@ CREATE TABLE `DogTable` (
 --
 
 INSERT INTO `DogTable` (`Dog ID`, `Dog Name`, `Year of Birth`, `Photo`, `Sex`, `Cage Number`, `Breed`, `Adoption Status (Y/N)`, `Weight (lbs)`) VALUES
-(111, 'Violet', 2013, 'https://i.imgur.com/Azypd6N.jpg', 'F', 24, 'Shiba Inu', 'Y', 20),
+(111, 'Violet', 2013, 'https://i.imgur.com/FruQneV.jpg', 'F', 24, 'Shiba Inu', 'Y', 20),
 (112, 'Lily', 2008, 'https://i.imgur.com/hxUmL0d.jpg', 'F', 13, 'Pitbull Mix', 'Y', 30),
 (113, 'Mya', 2009, 'https://i.imgur.com/7q8zvlW.jpg', 'F', 3, 'Pug', 'N', 12),
 (114, 'Honey', 2016, 'https://i.imgur.com/SD637rI.jpg', 'F', 5, 'Siberian Husky', 'N', 65),
@@ -100,8 +100,7 @@ INSERT INTO `DogTable` (`Dog ID`, `Dog Name`, `Year of Birth`, `Photo`, `Sex`, `
 (116, 'Edie', 2018, 'https://i.imgur.com/guT3DAu.jpg', 'F', 20, 'Pitbull Mix', 'N', 25),
 (117, 'Tank', 2018, 'https://i.imgur.com/0XxzWaK.jpg', 'M', 14, 'Rotweiler', 'N', 13),
 (118, 'Bubba', 2016, 'https://i.imgur.com/J92iobc.jpg', 'M', 18, 'French Bulldog', 'N', 25),
-(119, 'Drexel', 2017, 'TBD', 'https://i.imgur.com/RLZ3LEV.png', 15, 'Putbull Mix', 'N', 10);
-
+(119, 'Drexel', 2017, 'https://i.imgur.com/RLZ3LEV.png', 'M', 15, 'Putbull Mix', 'N', 10);
 -- --------------------------------------------------------
 
 --
