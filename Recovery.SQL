@@ -11,7 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `dumbie`
+-- Database: `ShelterDB`
 --
 
 -- --------------------------------------------------------
@@ -66,8 +66,8 @@ CREATE TABLE `AdoptionRecord` (
 --
 
 INSERT INTO `AdoptionRecord` (`Dog ID`, `Adopter ID`, `Adoption Date`, `Return Date`) VALUES
-(111, 10, '2015-04-15', NULL),
-(112, 11, '2013-07-11', NULL);
+(111, 10, '20150415', NULL),
+(112, 11, '20130711', NULL);
 
 -- --------------------------------------------------------
 
