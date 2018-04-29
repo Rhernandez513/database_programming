@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 28, 2018 at 07:38 PM
+-- Generation Time: Apr 29, 2018 at 09:30 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -11,7 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `ShelterDB`
+-- Database: `dumbie`
 --
 
 -- --------------------------------------------------------
@@ -101,6 +101,7 @@ INSERT INTO `DogTable` (`Dog ID`, `Dog Name`, `Year of Birth`, `Photo`, `Sex`, `
 (117, 'Tank', 2018, 'https://i.imgur.com/0XxzWaK.jpg', 'M', 14, 'Rotweiler', 'N', 13),
 (118, 'Bubba', 2016, 'https://i.imgur.com/J92iobc.jpg', 'M', 18, 'French Bulldog', 'N', 25),
 (119, 'Drexel', 2017, 'https://i.imgur.com/RLZ3LEV.png', 'M', 15, 'Putbull Mix', 'N', 10);
+
 -- --------------------------------------------------------
 
 --
