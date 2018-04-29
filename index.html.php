@@ -67,7 +67,7 @@ $row = $result->fetchAll();
       <section class="jumbotron text-center">
         <div class="container">
           <h1 class="jumbotron-heading">Puppy Management System</h1>
-          <p class="lead text-muted">Our Puppy Management System is a fully self contained, easy-to-use system for all your kennel administration needs!</p>
+          <p class="leadbackground: url('https://i.giphy.com/media/WVkDFeuAT8wlW/giphy.gif') no-repeat center center;">Our Puppy Management System is a fully self contained, easy-to-use system for all your kennel administration needs!</p>
           <p>
             <a href="#" class="btn btn-primary my-2">Main call to action</a>
             <a href="#" class="btn btn-secondary my-2">Secondary action</a>
