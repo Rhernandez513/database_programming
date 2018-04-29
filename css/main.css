@@ -7,6 +7,7 @@
   padding-bottom: var(--jumbotron-padding-y);
   margin-bottom: 0;
   background-color: #fff;
+  background: url('https://i.giphy.com/media/WVkDFeuAT8wlW/giphy.gif') no-repeat center center;
 }
 @media (min-width: 768px) {
   .jumbotron {
