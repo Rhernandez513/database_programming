@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 30, 2018 at 12:03 AM
+-- Generation Time: Apr 30, 2018 at 12:09 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -209,6 +209,15 @@ CREATE TABLE `TreatmentRecord` (
   `Date` date NOT NULL,
   `Treatment Description` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `TreatmentRecord`
+--
+
+INSERT INTO `TreatmentRecord` (`Physician ID`, `Dog ID`, `Treatment Type`, `Date`, `Treatment Description`) VALUES
+(21, 111, 'surgery', '0000-00-00', 'Spayed'),
+(21, 112, 'surgery', '0000-00-00', 'Neutered'),
+(20, 113, 'checkup', '0000-00-00', 'Ear Infection');
 
 -- --------------------------------------------------------
 
