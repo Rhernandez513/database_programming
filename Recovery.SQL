@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 30, 2018 at 12:09 AM
+-- Generation Time: Apr 30, 2018 at 12:24 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -11,7 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `PMS`
+-- Database: `SDB`
 --
 
 -- --------------------------------------------------------
@@ -45,8 +45,8 @@ CREATE TABLE `AdopterTable` (
 --
 
 INSERT INTO `AdopterTable` (`Adopter ID`, `Address`, `Phone Number`, `Name`) VALUES
-(10, '60 Street St', 2147483647, 'Jane Doe'),
-(11, '600 Street St', 2147483647, 'Trent Smith');
+(10, '60 Street St, Chicago', 2147483647, 'Jane Doe'),
+(11, '600 Street St, Chicago', 2147483647, 'Trent Smith');
 
 -- --------------------------------------------------------
 
@@ -66,8 +66,8 @@ CREATE TABLE `AdoptionRecord` (
 --
 
 INSERT INTO `AdoptionRecord` (`Dog ID`, `Adopter ID`, `Adoption Date`, `Return Date`) VALUES
-(111, 10, '0000-00-00', NULL),
-(112, 11, '0000-00-00', NULL);
+(111, 10, '2018-04-04', NULL),
+(112, 11, '2018-05-05', NULL);
 
 -- --------------------------------------------------------
 
@@ -119,10 +119,10 @@ CREATE TABLE `EmployeeTable` (
 --
 
 INSERT INTO `EmployeeTable` (`Staff ID`, `Date Hired`, `Job Title`) VALUES
-(60, '0000-00-00', 'Groomer'),
-(61, '0000-00-00', 'Reception'),
-(62, '0000-00-00', 'Supervisor'),
-(63, '0000-00-00', 'Maintenance');
+(60, '2017-09-10', 'Groomer'),
+(61, '2017-09-10', 'Reception'),
+(62, '2017-09-10', 'Supervisor'),
+(63, '2017-09-10', 'Maintenance');
 
 -- --------------------------------------------------------
 
@@ -144,9 +144,9 @@ CREATE TABLE `MedicationRecord` (
 --
 
 INSERT INTO `MedicationRecord` (`Physician ID`, `Dog ID`, `Medication Name`, `Dose`, `Start Date`, `End Date`) VALUES
-(21, 111, 'Carprofen', '100mg', '0000-00-00', '0000-00-00'),
-(21, 112, 'Carprofen', '100mg', '0000-00-00', '0000-00-00'),
-(20, 113, 'Tobramycin', '2x Daily', '0000-00-00', '0000-00-00');
+(21, 111, 'Carprofen', '100mg', '2018-01-01', '2018-02-02'),
+(21, 112, 'Carprofen', '100mg', '2018-02-02', '2018-03-03'),
+(20, 113, 'Tobramycin', '2x Daily', '2018-03-03', '2018-04-04');
 
 -- --------------------------------------------------------
 
@@ -215,9 +215,9 @@ CREATE TABLE `TreatmentRecord` (
 --
 
 INSERT INTO `TreatmentRecord` (`Physician ID`, `Dog ID`, `Treatment Type`, `Date`, `Treatment Description`) VALUES
-(21, 111, 'surgery', '0000-00-00', 'Spayed'),
-(21, 112, 'surgery', '0000-00-00', 'Neutered'),
-(20, 113, 'checkup', '0000-00-00', 'Ear Infection');
+(21, 111, 'Surgery', '2018-01-01', 'Spayed'),
+(21, 112, 'Surgery', '2018-02-02', 'Neutered'),
+(20, 113, 'Checkup', '2018-03-03', 'Ear Infection');
 
 -- --------------------------------------------------------
 
