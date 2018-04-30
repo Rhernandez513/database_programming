@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 30, 2018 at 12:24 AM
+-- Generation Time: Apr 30, 2018 at 09:51 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -11,7 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `SDB`
+-- Database: `ShelterDB`
 --
 
 -- --------------------------------------------------------
@@ -26,6 +26,21 @@ CREATE TABLE `ActivityRecord` (
   `Activity` varchar(50) NOT NULL,
   `Date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ActivityRecord`
+--
+
+INSERT INTO `ActivityRecord` (`Dog ID`, `Staff ID`, `Activity`, `Date`) VALUES
+(111, 64, 'Walk', '2018-04-30'),
+(112, 64, 'Walk', '2018-04-30'),
+(113, 64, 'Walk', '2018-04-30'),
+(114, 64, 'Walk', '2018-04-30'),
+(115, 65, 'Walk', '2018-04-30'),
+(116, 65, 'Walk', '2018-04-30'),
+(117, 65, 'Walk', '2018-04-30'),
+(118, 65, 'Walk', '2018-04-30'),
+(119, 65, 'Walk', '2018-04-30');
 
 -- --------------------------------------------------------
 
@@ -249,7 +264,7 @@ INSERT INTO `VolunteerTable` (`Staff ID`, `Supervisor ID`, `Organization Name`, 
 -- Indexes for table `ActivityRecord`
 --
 ALTER TABLE `ActivityRecord`
-  ADD KEY `activityrecord_ibfk_1` (`Dog ID`),
+  ADD PRIMARY KEY (`Dog ID`),
   ADD KEY `activityrecord_ibfk_2` (`Staff ID`);
 
 --
