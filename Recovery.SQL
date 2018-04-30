@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 28, 2018 at 07:38 PM
+-- Generation Time: Apr 30, 2018 at 12:03 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -11,7 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `ShelterDB`
+-- Database: `PMS`
 --
 
 -- --------------------------------------------------------
@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `ActivityRecord` (
-  `Dog ID` varchar(50) NOT NULL,
-  `Staff ID` varchar(50) NOT NULL,
+  `Dog ID` int(100) NOT NULL,
+  `Staff ID` int(100) NOT NULL,
   `Activity` varchar(50) NOT NULL,
   `Date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -45,7 +45,7 @@ CREATE TABLE `AdopterTable` (
 --
 
 INSERT INTO `AdopterTable` (`Adopter ID`, `Address`, `Phone Number`, `Name`) VALUES
-(10, '60 Street St', 1111111111, 'Jane Doe'),
+(10, '60 Street St', 2147483647, 'Jane Doe'),
 (11, '600 Street St', 2147483647, 'Trent Smith');
 
 -- --------------------------------------------------------
@@ -66,8 +66,8 @@ CREATE TABLE `AdoptionRecord` (
 --
 
 INSERT INTO `AdoptionRecord` (`Dog ID`, `Adopter ID`, `Adoption Date`, `Return Date`) VALUES
-(111, 10, '20150415', NULL),
-(112, 11, '20130711', NULL);
+(111, 10, '0000-00-00', NULL),
+(112, 11, '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
@@ -119,10 +119,10 @@ CREATE TABLE `EmployeeTable` (
 --
 
 INSERT INTO `EmployeeTable` (`Staff ID`, `Date Hired`, `Job Title`) VALUES
-(60, '20110611', 'Groomer'),
-(61, '20100420', 'Reception'),
-(62, '20080814', 'Supervisor'),
-(63, '20080503', 'Maintenance');
+(60, '0000-00-00', 'Groomer'),
+(61, '0000-00-00', 'Reception'),
+(62, '0000-00-00', 'Supervisor'),
+(63, '0000-00-00', 'Maintenance');
 
 -- --------------------------------------------------------
 
@@ -138,6 +138,15 @@ CREATE TABLE `MedicationRecord` (
   `Start Date` date NOT NULL,
   `End Date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `MedicationRecord`
+--
+
+INSERT INTO `MedicationRecord` (`Physician ID`, `Dog ID`, `Medication Name`, `Dose`, `Start Date`, `End Date`) VALUES
+(21, 111, 'Carprofen', '100mg', '0000-00-00', '0000-00-00'),
+(21, 112, 'Carprofen', '100mg', '0000-00-00', '0000-00-00'),
+(20, 113, 'Tobramycin', '2x Daily', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -179,13 +188,13 @@ CREATE TABLE `StaffTable` (
 --
 
 INSERT INTO `StaffTable` (`Staff ID`, `Staff Name`, `Staff Type`, `Address`, `Phone Number`) VALUES
-(60, 'Christina', 'Employee', '123 Street St', 888888888),
-(61, 'Grace', 'Employee', '456 Street St', 2147483647),
-(62, 'Robert', 'Employee', '789 Street St', 2147483647),
-(63, 'Walker', 'Employee', '100 Street St', 2147483647),
-(64, 'Jorge', 'Volunteer', '200 Street St', 2147483647),
-(65, 'Angela', 'Volunteer', '123 Street St', 2147483647),
-(66, 'Jake', 'Volunteer', '300 Street St', 2147483647);
+(60, 'Christina', 'Employee', '123 Street St, Chicago', 2147483647),
+(61, 'Grace', 'Employee', '456 Street St, Chicago', 2147483647),
+(62, 'Robert', 'Employee', '789 Street St, Chicago', 2147483647),
+(63, 'Walker', 'Employee', '100 Street St, Chicago', 2147483647),
+(64, 'Jorge', 'Volunteer', '200 Street St, Chicago', 2147483647),
+(65, 'Angela', 'Volunteer', '123 Street St, Chicago', 2147483647),
+(66, 'Jake', 'Volunteer', '300 Street St, Chicago', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -228,6 +237,13 @@ INSERT INTO `VolunteerTable` (`Staff ID`, `Supervisor ID`, `Organization Name`, 
 --
 
 --
+-- Indexes for table `ActivityRecord`
+--
+ALTER TABLE `ActivityRecord`
+  ADD KEY `activityrecord_ibfk_1` (`Dog ID`),
+  ADD KEY `activityrecord_ibfk_2` (`Staff ID`);
+
+--
 -- Indexes for table `AdopterTable`
 --
 ALTER TABLE `AdopterTable`
@@ -248,6 +264,10 @@ ALTER TABLE `DogTable`
 
 --
 -- Indexes for table `EmployeeTable`
+--
+ALTER TABLE `EmployeeTable`
+  ADD KEY `Staff ID` (`Staff ID`);
+
 --
 -- Indexes for table `MedicationRecord`
 --
@@ -284,8 +304,14 @@ ALTER TABLE `VolunteerTable`
 --
 -- Constraints for dumped tables
 --
-ALTER TABLE `EmployeeTable`
-  ADD KEY `Staff ID` (`Staff ID`);
+
+--
+-- Constraints for table `ActivityRecord`
+--
+ALTER TABLE `ActivityRecord`
+  ADD CONSTRAINT `activityrecord_ibfk_1` FOREIGN KEY (`Dog ID`) REFERENCES `DogTable` (`Dog ID`),
+  ADD CONSTRAINT `activityrecord_ibfk_2` FOREIGN KEY (`Staff ID`) REFERENCES `StaffTable` (`Staff ID`);
+
 --
 -- Constraints for table `AdoptionRecord`
 --
@@ -294,17 +320,18 @@ ALTER TABLE `AdoptionRecord`
   ADD CONSTRAINT `adoptionrecord_ibfk_2` FOREIGN KEY (`Dog ID`) REFERENCES `DogTable` (`Dog ID`);
 
 --
+-- Constraints for table `EmployeeTable`
+--
+ALTER TABLE `EmployeeTable`
+  ADD CONSTRAINT `employeetable_ibfk_1` FOREIGN KEY (`Staff ID`) REFERENCES `StaffTable` (`Staff ID`);
+
+--
 -- Constraints for table `MedicationRecord`
 --
 ALTER TABLE `MedicationRecord`
   ADD CONSTRAINT `medicationrecord_ibfk_1` FOREIGN KEY (`Dog ID`) REFERENCES `DogTable` (`Dog ID`),
   ADD CONSTRAINT `medicationrecord_ibfk_2` FOREIGN KEY (`Physician ID`) REFERENCES `PhysicianTable` (`Physician ID`);
 
-
-
-  ALTER TABLE `ActivityRecord`
-    ADD CONSTRAINT `activityrecord_ibfk_1` FOREIGN KEY (`Dog ID`) REFERENCES `DogTable` (`Dog ID`),
-    ADD CONSTRAINT `activityrecord_ibfk_2` FOREIGN KEY (`Staff ID`) REFERENCES `StaffTable` (`Staff ID`);
 --
 -- Constraints for table `TreatmentRecord`
 --
@@ -318,7 +345,3 @@ ALTER TABLE `TreatmentRecord`
 ALTER TABLE `VolunteerTable`
   ADD CONSTRAINT `volunteertable_ibfk_1` FOREIGN KEY (`Staff ID`) REFERENCES `StaffTable` (`Staff ID`),
   ADD CONSTRAINT `volunteertable_ibfk_2` FOREIGN KEY (`Supervisor ID`) REFERENCES `StaffTable` (`Staff ID`);
-
-
-  ALTER TABLE `EmployeeTable`
-    ADD CONSTRAINT `employeetable_ibfk_1` FOREIGN KEY (`Staff ID`) REFERENCES `StaffTable` (`Staff ID`);
