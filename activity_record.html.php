@@ -84,13 +84,13 @@ $row = $result->fetchAll();
 </style>
 </head>
 <body>
+
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
 
 if(isset($_POST['volunteerSelect'])) {
     $radio_value = $_POST['volunteerSelect'];
 }
-
 
 if($radio_value == "Enter_New") {
     echo "
@@ -111,8 +111,8 @@ if($radio_value == "Enter_New") {
 
     <button id=\"signin_button\" class=\"btn btn-lg btn-primary btn-block\" type=\"submit\" id=\"signin_button\">Submit</button>
     <p class=\"mt-5 mb-3 text-muted\">&copy; 2017-2018</p>
-</form>
-    ";
+</form>";
+
 } else if ($radio_value == "View_Activity") { ?>
 
     <title>Updated Actitivites</title>
@@ -130,9 +130,74 @@ if($radio_value == "Enter_New") {
                       <td> <?php echo $value['Staff ID']; ?> </td>
                           <td> <?php echo $value['Activity']; ?> </td>
                               <td> <?php echo $value['Date']; ?> </td>
-                </tr
+                              <td>
+                           <form action="?deleteDog" method="post">
+                           <input type="hidden" name="id" value="<?php echo $value['Dog ID']; ?>">
+                           <input type="submit" value="delete">
+                         </form>
+                             </td>
+                </tr>
         <?php endforeach ?>
 
       </table>
-  </body>
-  </html>
+<?php
+} else {   //get rid of this
+//    echo "No radio button set";
+}
+if (isset($_GET['deleteDog']))
+  {
+    try
+    {
+    $sql = "DELETE FROM `ActivityRecord` WHERE `ActivityRecord`.`Dog ID` = :id";
+    # DELETE FROM `ActivityRecord` WHERE `ActivityRecord`.`Dog ID` = 111;
+      $s = $pdo->prepare($sql);
+      $s->bindValue(':id', $_POST['id']);
+      $s->execute();
+
+     echo 'Activity has been deleted.';
+
+$query = "SELECT * FROM ActivityRecord";
+$result = $pdo->query($query);
+$row = $result->fetchAll();  ?>
+
+    <title>Updated Actitivites</title>
+  </head>
+  <body>
+      <p> Here are all the updated activities: </p>
+      <table>
+        <th>Dog ID</th>
+        <th>Staff ID</th>
+        <th>Activity</th>
+        <th>Date</th>
+        <?php foreach($row as $value): ?>
+                <tr>
+                  <td> <?php echo $value['Dog ID']; ?> </td>
+                      <td> <?php echo $value['Staff ID']; ?> </td>
+                          <td> <?php echo $value['Activity']; ?> </td>
+                              <td> <?php echo $value['Date']; ?> </td>
+                              <td>
+                </tr>
+        <?php endforeach ?>
+
+      </table>
+
+
+<?php
+   }
+    catch (PDOException $e)
+    {
+      $error = 'Error deleting activity: ' . $e->getMessage();
+      include 'error.html.php';
+      exit();
+    }
+    header('Location: .');
+//    exit();
+  }
+
+
+?>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
