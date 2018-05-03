@@ -83,7 +83,7 @@
     <input type="radio" name="searchSelect" id="searchOption1" value="Female">
     <label for="searchOption1">Female</label>
 
-    <input type="radio" name="searchSelect" id="searcOption2" value="Male">
+    <input type="radio" name="searchSelect" id="searchOption2" value="Male">
     <label for="searchOption2">Male</label>
 
     <input type="submit" value="Submit">
