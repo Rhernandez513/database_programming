@@ -1,17 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Apr 30, 2018 at 11:53 PM
--- Server version: 5.6.35
--- PHP Version: 7.1.8
+-- Host: localhost
+-- Generation Time: May 03, 2018 at 02:39 AM
+-- Server version: 5.6.38
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `ShelterDB`
+-- Database: `shelterdb`
 --
 
 -- --------------------------------------------------------
@@ -32,7 +32,7 @@ CREATE TABLE `ActivityRecord` (
 --
 
 INSERT INTO `ActivityRecord` (`Dog ID`, `Staff ID`, `Activity`, `Date`) VALUES
-(111, 64, 'Walk', '2018-04-30'),
+(111, 61, 'walk', '2016-08-08'),
 (112, 64, 'Walk', '2018-04-30'),
 (113, 64, 'Walk', '2018-04-30'),
 (114, 64, 'Walk', '2018-04-30'),
@@ -108,14 +108,14 @@ CREATE TABLE `DogTable` (
 
 INSERT INTO `DogTable` (`Dog ID`, `Dog Name`, `Year of Birth`, `Photo`, `Sex`, `Cage Number`, `Breed`, `Adoption Status (Y/N)`, `Weight (lbs)`) VALUES
 (111, 'Violet', 2013, 'https://i.imgur.com/FruQneV.jpg', 'F', 24, 'Shiba Inu', 'Y', 20),
-(112, 'Lily', 2008, 'https://i.imgur.com/hxUmL0d.jpg', 'F', 13, 'Pitbull Mix', 'Y', 30),
-(113, 'Mya', 2009, 'https://i.imgur.com/7q8zvlW.jpg', 'F', 3, 'Pug', 'N', 12),
-(114, 'Honey', 2016, 'https://i.imgur.com/SD637rI.jpg', 'F', 5, 'Siberian Husky', 'N', 65),
+(112, 'Mya', 2008, 'https://i.imgur.com/hxUmL0d.jpg', 'F', 13, 'Pug', 'Y', 30),
+(113, 'Honey', 2009, 'https://i.imgur.com/7q8zvlW.jpg', 'F', 3, 'Husky', 'N', 12),
+(114, 'Leelo', 2016, 'https://i.imgur.com/SD637rI.jpg', 'M', 5, 'Lab', 'N', 65),
 (115, 'Peter', 2017, 'https://i.imgur.com/js4H55R.jpg', 'M', 10, 'Cavachon', 'N', 10),
 (116, 'Edie', 2018, 'https://i.imgur.com/guT3DAu.jpg', 'F', 20, 'Pitbull Mix', 'N', 25),
 (117, 'Tank', 2018, 'https://i.imgur.com/0XxzWaK.jpg', 'M', 14, 'Rotweiler', 'N', 13),
 (118, 'Bubba', 2016, 'https://i.imgur.com/J92iobc.jpg', 'M', 18, 'French Bulldog', 'N', 25),
-(119, 'Drexel', 2017, 'https://i.imgur.com/RLZ3LEV.png', 'M', 15, 'Putbull Mix', 'N', 10);
+(119, 'Drexel', 2017, 'https://i.imgur.com/RLZ3LEV.png', 'M', 15, 'Pitbull Mix', 'N', 10);
 
 -- --------------------------------------------------------
 
