@@ -76,17 +76,17 @@ $row = $result->fetchAll();
           <h2 class="my-4">Options</h2>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-            <a href="records.html.php"><img src="/img/syringe.jpg"></a>
+            <a href="records.html.php"><img src="/img/vet.jpg"></a>
           <h3>Medical Records</h3>
         </div>
 
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <a href="/volunteerView.html.php"><img src="/img/volunteers.png"></a>
+          <a href="/volunteerView.html.php"><img src="/img/walk.png"></a>
           <h3>Activity Records</h3>
         </div>
 
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-            <a href="population.html.php"><img src="/img/groom_dog.jpg"></a>
+            <a href="population.html.php"><img src="/img/volunteers.png"></a>
             <h3>Total Dogs We Have Saved</h3>
         </div>
 	      
