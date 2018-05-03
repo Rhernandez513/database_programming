@@ -1,8 +1,8 @@
-
 <!DOCTYPE >
 
 <html>
 <head>
+    <title>Enter New Activity Record</title>
     <div class="form-style-8">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
@@ -73,93 +73,69 @@
     background-color:#34CACA;
 }
 </style>
-</head>
-<body>
 
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
+global $pdo;
 
 if(isset($_POST['searchSelect'])) {
     $radio_value = $_POST['searchSelect'];
 }
 
-if($radio_value == "Male") { ?>
-    
-    $query = "SELECT * FROM `DogTable` WHERE  `Sex`=‘M’ AND `Adoption Status (Y/N)` = 'N'";
-    $result = $pdo->query($query);
-    $row = $result->fetchAll(); ?>
+if($radio_value == "Male") {
 
-    <title>Male Dogs Available</title>
-    <head>
-    <body>
+  $query = "SELECT * FROM `DogTable` WHERE `Sex`='M' AND `Adoption Status (Y/N)` = 'N'";
+   $result = $pdo->query($query);
+   $row = $result->fetchAll(); ?>
+
+   <title>Male Dogs Available</title>
+ </head>
+ <body>
+ <table>
+    <th>Dog ID</th>
+    <th>Dog Name</th>
+    <th>Year of Birth</th>
+    <th>Sex</th>
+    <th>Breed</th>
+  <?php foreach($row as $value): ?>
+
+          <tr>
+            <td> <?php echo $value['Dog ID']; ?> </td>
+                <td> <?php echo $value['Dog Name']; ?> </td>
+                    <td> <?php echo $value['Year of Birth']; ?> </td>
+                          <td> <?php echo $value['Sex']; ?> </td>
+                            <td> <?php echo $value['Breed']; ?> </td>
+          </tr>
+  <?php endforeach?>
+</table>
+<?php
+} else if($radio_value == "Female") {
+    $query = "SELECT * FROM `DogTable` WHERE `Sex`='F' AND `Adoption Status (Y/N)` = 'N'";
+     $result = $pdo->query($query);
+     $row = $result->fetchAll(); ?>
+
+     <title>Female Dogs Available</title>
+   <head>
+   <body>
+    <table>
+      <th>Dog ID</th>
+      <th>Dog Name</th>
+      <th>Year of Birth</th>
+      <th>Sex</th>
+      <th>Breed</th>
     <?php foreach($row as $value): ?>
-      <table>
-        <th>Dog ID</th>
-        <th>Dog Name</th>
-        <th>Year of Birth</th>
-        <th>Photo</th>
-        <th>Sex</th>
-        <th>Breed</th>
             <tr>
               <td> <?php echo $value['Dog ID']; ?> </td>
                   <td> <?php echo $value['Dog Name']; ?> </td>
                       <td> <?php echo $value['Year of Birth']; ?> </td>
-                          <td> <?php echo $value['Photo']; ?> </td>
-                            <td> <?php echo $value['Sex']; ?> </td>
+                            <td> <?php echo $value['Sex']; ?> <br> </td>
                               <td> <?php echo $value['Breed']; ?> </td>
             </tr>
     <?php endforeach?>
-</table>
-
-<?php
-} else if ($radio_value == "Female") { ?>
-        
-        
-  $query = "SELECT *FROM `DogTable` WHERE `Sex`='F' AND `Adoption Status (Y/N)` = 'N'";
-  $result = $pdo->query($query);
-  $row = $result->fetchAll(); ?>
-
-  <title>Female Dogs Available</title>
-  <head>
-  <body>
-      <?php foreach($row as $value): ?>
-        <table>
-          <th>Dog ID</th>
-          <th>Dog Name</th>
-          <th>Year of Birth</th>
-          <th>Photo</th>
-          <th>Sex</th>
-          <th>Breed</th>
-              <tr>
-                <td> <?php echo $value['Dog ID']; ?> </td>
-                    <td> <?php echo $value['Dog Name']; ?> </td>
-                        <td> <?php echo $value['Year of Birth']; ?> </td>
-                            <td> <?php echo $value['Photo']; ?> </td>
-                              <td> <?php echo $value['Sex']; ?> </td>
-                                <td> <?php echo $value['Breed']; ?> </td>
-              </tr>
-      <?php endforeach ?>
-    </table>
-
-<?php
-} else {   //get rid of this
-//    echo "No radio button set";
+  </table>
+  <?php
 }
-
-   }
-    catch (PDOException $e)
-    {
-      $error = 'Error searching for dog: ' . $e->getMessage();
-      include 'error.html.php';
-      exit();
-    }
-    header('Location: .');
-//    exit();
-  }
-
 ?>
-
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
 </body>
 </html>
