@@ -101,7 +101,7 @@ $row = $result->fetchAll();
           <p> Description here </p>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-            <a href="population.php"><img src="/img/groom_dog.jpg"></a>
+            <a href="population.html.php"><img src="/img/groom_dog.jpg"></a>
             <h3><a href="population.html.php">Population </a>
 		  <br>
             <small>Check on Dog population</small>
