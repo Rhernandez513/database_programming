@@ -1,11 +1,3 @@
-<?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
-global $pdo;
-
-$query = "SELECT * FROM DogTable";
-$result = $pdo->query($query);
-$row = $result->fetchAll();
-?>
 
 <!DOCTYPE >
 
@@ -92,6 +84,10 @@ if(isset($_POST['searchSelect'])) {
 }
 
 if($radio_value == "Male") { ?>
+    
+    $query = "SELECT * FROM `DogTable` WHERE  `Sex`=‘M’ AND `Adoption Status (Y/N)` = 'N'";
+    $result = $pdo->query($query);
+    $row = $result->fetchAll(); ?>
 
     <title>Male Dogs Available</title>
     <head>
@@ -117,6 +113,11 @@ if($radio_value == "Male") { ?>
 
 <?php
 } else if ($radio_value == "Female") { ?>
+        
+        
+  $query = "SELECT *FROM `DogTable` WHERE `Sex`='F' AND `Adoption Status (Y/N)` = 'N'";
+  $result = $pdo->query($query);
+  $row = $result->fetchAll(); ?>
 
   <title>Female Dogs Available</title>
   <head>
