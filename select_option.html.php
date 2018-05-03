@@ -89,7 +89,7 @@ $row = $result->fetchAll();
         </div>
 
 	<div class="col-lg-4 col-sm-6 text-center mb-4">
-            <a href=#><img src="/img/ribbon.jpg"></a>
+            <a href="adoption_view.html.php"><img src="/img/ribbon.jpg"></a>
             <h3>Our Success Stories</h3>
         </div>
 
