@@ -13,20 +13,19 @@ session_start();
 
 try {
     if(isset($_SESSION['dog_id']) && $_SESSION['dog_id'] == true){
+        $query = "SELECT `Physician Name`, `Medication Name`, `Dose`, `DogTable`.`Dog ID` FROM `medicationrecord` JOIN DogTable JOIN `physiciantable` WHERE `DogTable`.`Dog ID` = " . $_SESSION['dog_id'];
+        $result = $pdo->query($query);
+        $row = $result->fetchAll();
 
     }
 
 } catch (PDOException $e) {
-    $error = 'Database error';
+    $error = $e->getMessage();
     include 'includes/error.html.php';
     exit();
 }
 
 
-
-$query = "SELECT * FROM DogTable";
-$result = $pdo->query($query);
-$row = $result->fetchAll();
 
 
 ?>
@@ -36,5 +35,8 @@ $row = $result->fetchAll();
 </head>
 <body>
     <p>Dog ID: <?php echo $_SESSION['dog_id'] ?></p>
+    <p>Medication Name: <?php echo $row[0]['Medication Name'] ?></p>
+    <p>Physician Name: <?php echo $row[0]['Physician Name'] ?></p>
+    <p>Dose: <?php echo $row[0]['Dose'] ?></p>
 </body>
 </html>
