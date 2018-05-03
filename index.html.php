@@ -50,6 +50,7 @@ session_start();
           <h4 class="text-white">Shelter Database &#x2764;</h4>
               <a href="/signin.html.php" class="btn btn-primary my-2">Employee Sign In</a>
               <a href="#" class="btn btn-primary my-2">Advanced Dog Search</a>
+              <a href="/advanced_search.html.php" class="btn btn-primary my-2">Advanced Dog Search</a>
         </div>
       </div>
     </header>
