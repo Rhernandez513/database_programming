@@ -1,12 +1,14 @@
 <?php
+
 include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
 
 global $pdo;
 
-$query = "SELECT `Dog Name`, `Photo` FROM `dogtable`";
+$query = "SELECT `Dog Name`, `Photo`, `Dog ID`, `Breed`, `Sex` FROM `dogtable`";
 $result = $pdo->query($query);
 $row = $result->fetchAll();
 
+session_start();
 
 ?>
 
@@ -19,7 +21,7 @@ $row = $result->fetchAll();
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
 
-    <title>Puppy Management System 3000</title>
+    <title>Album example for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.css" rel="stylesheet">
@@ -35,15 +37,9 @@ $row = $result->fetchAll();
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white"></h4>
-              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
-              <h4 class="text-white">Contact</h4>
               <ul class="list-unstyled">
-                <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                <li><a href="#" class="text-white">Like on Facebook</a></li>
-                <li><a href="#" class="text-white">Email me</a></li>
               </ul>
             </div>
           </div>
@@ -51,46 +47,31 @@ $row = $result->fetchAll();
       </div>
       <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-            <strong><a href="/signin.html.php">Sign In</a></strong>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <h4 class="text-white">Shelter Database &#x2764;</h4>
+              <a href="/signin.html.php" class="btn btn-primary my-2">Employee Sign In</a>
+              <a href="#" class="btn btn-primary my-2">Advanced Dog Search</a>
         </div>
       </div>
     </header>
 
     <main role="main">
 
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Puppy Management System</h1>
-          <p class="leadbackground: url('https://i.giphy.com/media/WVkDFeuAT8wlW/giphy.gif') no-repeat center center;">Our Puppy Management System is a fully self contained, easy-to-use system for all your kennel administration needs!</p>
-          <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-          </p>
-        </div>
-      </section>
+
 
       <div class="album py-5 bg-light">
         <div class="container">
           <div class="row">
                 <?php
-                foreach ($row as $value) {
-                  echo " <div class=\"col-md-4\">
+               foreach ($row as $value) {
+                 echo " <div class=\"col-md-4\">
                  <div class=\"card mb-4 box-shadow\">
                 <img class=\"card-img-top\" src='$value[1]' alt=\"Card image cap\">
                 <div class=\"card-body\">
-                  <p class=\"card-text\">$value[0]</p>
+                  <p class=\"card-text\"> Name : $value[0] <br> Dog ID : $value[2] </p>
+                    <p class=\"card-text\">Breed : $value[3] <br> Sex : $value[4]</p>
                   <div class=\"d-flex justify-content-between align-items-center\">
                     <div class=\"btn-group\">
-                      <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
-                      <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
                     </div>
-                    <small class=\"text-muted\">9 mins</small>
                   </div>
                 </div>
               </div>
@@ -116,11 +97,25 @@ $row = $result->fetchAll();
     </footer>
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
+   ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="/node_modules/popper.js/dist/popper.min.js"></script>
     <script src="/js/bootstrap.js"></script>
     <script src="/js/holder.min.js"></script>
+    <script>
+}
+            jQuery(document).ready(function($) {
+                $(".dog-view-select").click(function(e) {
+                    alert(this.id);
+                    e.preventDefault();
+                    $.post("session_updater.html.php", {
+                        "dog_id" : this.id
+                    });
+                    $("#jumbo_dog_name").value = this.id;
+                });
+            });
+
+    </script>
   </body>
 </html>
