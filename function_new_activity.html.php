@@ -93,7 +93,7 @@ function New_Activity($dog_id, $staff_id, $activity, $date) {
     global $pdo;
 try{
     $stmt = $pdo->prepare("INSERT INTO ActivityRecord (`Dog ID`, `Staff ID`, `Activity`, `Date`)
-    VALUES (:dogid, :staffid, :activity, :date)");
+    VALUES (:dogid, :staffid, :activity, :date) ON DUPLICATE KEY UPDATE `Staff ID` = :staffid, `Activity` = :activity, `Date` = :date;");
     $stmt->bindParam(':dogid', $dog_id);
     $stmt->bindParam(':staffid', $staff_id);
     $stmt->bindParam(':activity', $activity);
@@ -128,10 +128,9 @@ try{
 	}
 catch(PDOException $e)
 {
-    echo 'The activity has not been entered. Please enter valid dog and staff ids';
+    echo 'The activity has not been entered. Please enter valid dog and staff ids.';
 }
 }
-include 'entered_records.html.php';
 ?>
 </head>
 </html>
