@@ -1,7 +1,7 @@
 CREATE TABLE activityrecord_audit LIKE activityrecord;
-INSERT activityrecord_audit SELECT * FROM activityrecord;
+-- INSERT activityrecord_audit SELECT * FROM activityrecord;
 
-TRUNCATE TABLE activityrecord_audit
+-- TRUNCATE TABLE activityrecord_audit
 
 DELIMITER $$
 CREATE TRIGGER before_activity_delete
@@ -10,10 +10,11 @@ CREATE TRIGGER before_activity_delete
 BEGIN
     
     INSERT INTO activityrecord_audit
-    SET action = 'insert',
-    `activityrecord_audit`.`Dog ID` = `Dog ID`,
-    `activityrecord_audit`.`Staff ID` = `Staff ID`,
-    `activityrecord_audit`.`Activity` = `Activity`,
-    `activityrecord_audit`.`Date` = `Date`;
+    -- SET action = 'insert',
+	SET action = 'update',
+    `activityrecord_audit`.`Dog ID` = OLD.`Dog ID`,
+    `activityrecord_audit`.`Staff ID` = OLD.`Staff ID`,
+    `activityrecord_audit`.`Activity` = OLD.`Activity`,
+    `activityrecord_audit`.`Date` = OLD.`Date`;
 END$$
 DELIMITER ;
